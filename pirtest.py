@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import time
+import time, datetime
 GPIO.setmode(GPIO.BCM)
 PIR_PIN = 7
 GPIO.setup(PIR_PIN, GPIO.IN)
@@ -10,6 +10,7 @@ try:
     while True:
         if GPIO.input(PIR_PIN):
             print "Motion Detected!"
+            print datetime.datetime.now()
             time.sleep(1)
 except KeyboardInterrupt:
                print "Quit"
