@@ -1,6 +1,15 @@
 import RPi.GPIO as GPIO
-import time, datetime
+import time, datetime, sqlite3
+
+conn = sqlite3.connect('../housealarm.db')
+c = conn.cursor()
+c.execute (''' CREATE TABLE `log` (`id`	INTEGER PRIMARY KEY AUTOINCREMENT,`datetime` TEXT,`sensor` TEXT); ''')
 GPIO.setmode(GPIO.BOARD)
+SENSOR['lounge']=7
+SENSOR['kitchen']=11
+SENSOR['landing']=13
+SENSOR['hallway']=15
+
 PIR_PIN = 7
 GPIO.setup(PIR_PIN, GPIO.IN)
 try:
