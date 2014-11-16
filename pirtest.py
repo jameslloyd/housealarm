@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time, datetime
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 PIR_PIN = 7
 GPIO.setup(PIR_PIN, GPIO.IN)
 try:
