@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time, datetime
 
 PIR_PIN = 7
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PIR_PIN, GPIO.IN)
 try:
     print "PIR Module Test (CTRL+C to exit)"
